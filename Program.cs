@@ -13,3 +13,15 @@ Console.WriteLine(pozition.X);
 {
     return ("Béla", 21);
 }
+
+List<int> asd = new List<int>{ 1, 2, 3, 3, 1, };
+
+
+var ny = asd
+    .GroupBy(x => x)
+    .ToDictionary(x => x, x => x.Count())
+    .Where(x => x.Value == 1)
+    .OrderBy(x => x.Key)
+    .First().Key.Key;
+
+Console.WriteLine(ny);
